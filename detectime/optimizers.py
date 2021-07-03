@@ -8,7 +8,7 @@ def get_optimizer(config, net):
     lr = config.train.learning_rate
     log.info(lr)
 
-    log.info("Opt: ", config.train.optimizer)
+    log.info(f"Opt: {config.train.optimizer}")
 
     if config.train.optimizer == 'SGD':
         optimizer = torch.optim.SGD(filter(lambda p: p.requires_grad,
