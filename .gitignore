@@ -20,6 +20,12 @@ parts/
 sdist/
 var/
 wheels/
+TRAIN_DATA/
+train.csv
+*.json
+*.pth
+*.h5
+.ipynb_checkpoints/
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/

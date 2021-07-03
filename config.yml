@@ -1,0 +1,43 @@
+exp_name: 'detectime'
+outdir: './experiments/'
+
+path:
+    input_path: 'data/test.csv'
+    out_path: './answers.csv'
+
+weights:
+    classification_model_path: 'model/gesture_classification.pth'
+    detection_model_path: 'model/mask_rcnn_hand_detection.h5'
+
+detection:
+    detection_type: 'modified'
+    detector_type: 'RetinaNetMobileNetV1'
+
+cuda_id: '0'
+
+dataset:
+    seed: 123
+    num_of_classes: 6
+    input_size: 224
+    crop_size: 1.5
+    batch_size: 48
+    augmentations: 'default'
+    augmentations_valid: 'default'
+    num_workers: 16
+
+model:
+    model_type: 'resnet34'
+
+train:
+    optimizer: 'SGD'
+    learning_rate: 0.002
+    momentum: 0.9
+    lr_schedule: 'cosine'
+    n_epoch: 21
+    label_smoothing: true
+    eps: 0.01
+    freq_vis: 500
+
+utils:
+    show_image_after_detection: False
+    show_gesture_prediction_result: True

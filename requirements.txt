@@ -1,0 +1,16 @@
+face-detection
+tensorflow==2.5.0
+numpy
+torch~=1.9.0
+pandas>=1.1.5
+torchvision~=0.10.0
+opencv-python
+PyYAML
+tqdm
+scikit-image
+scipy
+matplotlib
+python-json-logger>=0.1.11
+jupyterlab
+seaborn
+albumentations==0.5.2

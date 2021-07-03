@@ -1,0 +1,22 @@
+version: 1
+disable_existing_loggers: false
+
+formatters:
+    simple:
+        format: "%(asctime)s - %(name)s - %(filename)s - %(levelname)s - %(message)s"
+        datefmt: "%Y-%m-%d %H:%M:%S"
+    json_formatter:
+        format: "%(asctime)s - %(name)s - %(filename)s - %(levelname)s - %(message)s"
+        datefmt: "%Y-%m-%d %H:%M:%S"
+        class: pythonjsonlogger.jsonlogger.JsonFormatter
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: json_formatter
+    stream: ext://sys.stdout
+
+root:
+  level: DEBUG
+  handlers: [console]

@@ -1,0 +1,12 @@
+https://boosters.pro/api/ch/files/pub/train.csv
+https://boosters.pro/api/ch/files/pub/sample_submit.zip
+https://boosters.pro/api/ch/files/pub/machinescansee2021_answers_example.csv
+https://boosters.pro/api/ch/files/pub/train_data1.zip
+https://boosters.pro/api/ch/files/pub/train_data2.zip
+https://boosters.pro/api/ch/files/pub/train_data3.zip
+https://boosters.pro/api/ch/files/pub/train_data4.zip
+https://boosters.pro/api/ch/files/pub/train_data5.zip
+https://boosters.pro/api/ch/files/pub/train_data6.zip
+https://boosters.pro/api/ch/files/pub/train_data7.zip
+https://boosters.pro/api/ch/files/pub/train_data8.zip
+https://boosters.pro/api/ch/files/pub/train_data9.zip
