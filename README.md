@@ -46,10 +46,10 @@ python script.py
 
 Для воспроизведения результатов и дальнейшего их улученя были подготовлены два ноутбука:
 
-- [01. get_train_data.ipynb]() - представляет из себя получение обучающей выборки для модели классификации жестов;
-- [02. train_resnet.ipynb]() - представляет из себя непосредственно обучение модели классификации
+- [01. get_train_data.ipynb](https://github.com/aptmess/detectime/blob/main/notebooks/01.%20get_train_data.ipynb) - представляет из себя получение обучающей выборки для модели классификации жестов;
+- [02. train_resnet.ipynb](https://github.com/aptmess/detectime/blob/main/notebooks/02.%20train_resnet.ipynb) - представляет из себя непосредственно обучение модели классификации
 
-Для запуска данных ноутбуков необходимо загрузить [данные](), представленные на сореновании, с помощью команды ниже — для этого потребуется около 90 GB на диске или виртуальном хранилище.
+Для запуска данных ноутбуков необходимо загрузить [данные](https://github.com/aptmess/detectime/blob/main/download.txt), представленные на сореновании, с помощью команды ниже — для этого потребуется около 90 GB на диске или виртуальном хранилище.
 
 ```bash
 sh download_data.sh
@@ -62,39 +62,40 @@ sh download_data.sh
 
 Данный репозиторий состоит из нескольких логических структурных блоков:
 
-### [./detectime/]()
+### [./detectime/](https://github.com/aptmess/detectime/tree/main/detectime)
 
 Основной модуль, в котором собран весь код - от инициализации моделей, обучению и предсказанию жестов. Ниже приведены краткие описания каждого из модулей:
 
-- [./detectime/augmentation.py]() - функции и классы для аугментации и операций над изображениями (Resize, Crop);
-- [./detectime/averagemeter.py]() - кастомный подсчет метрик;
-- [./detectime/dataset.py]() - создание тренировочных и валидационных датасетов;
-- [./detectime/detectime.py]() - основной код - выполняет работу по иницилазации моделей и сохранению результатов работы;
-- [./detectime/detection.py]() - функции, выполняющие поиск жеста на картинке;
-- [./detectime/loss_function.py]() - loss функции;
-- [./detectime/maskrcnn.py]() - модуль для инициализации модели распознования рук на картинке;
-- [./detectime/models.py]() - загрузка моделей из `torchvision.models`;
-- [./detectime/optimizers.py]() - различные оптимизаторы;
-- [./detectime/train.py]() - тренировка и валидация моделей;
+- [./detectime/augmentation.py](https://github.com/aptmess/detectime/blob/main/detectime/augmentations.py) - функции и классы для аугментации и операций над изображениями (Resize, Crop);
+- [./detectime/averagemeter.py](https://github.com/aptmess/detectime/blob/main/detectime/averagemeter.py) - кастомный подсчет метрик;
+- [./detectime/dataset.py](https://github.com/aptmess/detectime/blob/main/detectime/dataset.py) - создание тренировочных и валидационных датасетов;
+- [./detectime/detectime.py](https://github.com/aptmess/detectime/blob/main/detectime/detectime.py) - основной код - выполняет работу по иницилазации моделей и сохранению результатов работы;
+- [./detectime/detection.py](https://github.com/aptmess/detectime/blob/main/detectime/detection.py) - функции, выполняющие поиск жеста на картинке;
+- [./detectime/loss_function.py](https://github.com/aptmess/detectime/blob/main/detectime/loss_function.py) - loss функции;
+- [./detectime/maskrcnn.py](https://github.com/aptmess/detectime/blob/main/detectime/maskrcnn.py) - модуль для инициализации модели распознования рук на картинке;
+- [./detectime/models.py](https://github.com/aptmess/detectime/blob/main/detectime/models.py) - загрузка моделей из `torchvision.models`;
+- [./detectime/optimizers.py](https://github.com/aptmess/detectime/blob/main/detectime/optimizers.py) - различные оптимизаторы;
+- [./detectime/train.py](https://github.com/aptmess/detectime/blob/main/detectime/train.py) - тренировка и валидация моделей;
+- [./detectime/utils.py](https://github.com/aptmess/detectime/blob/main/detectime/utils.py) - различные помогающие функции.
 
-### [./mrcnn/]()
+### [./mrcnn/](https://github.com/aptmess/detectime/tree/main/mrcnn)
 
 В данном модуле расположена реализация и иницализация модели [HandRCNN](https://github.com/SupreethN/Hand-CNN), перенесенная на версию `tensorflow 2.5.0`. 
 Модель в данном модуле осуществляет поиск рук на картинке.
 
-### [./model/]()
+### [./model/]
 
 В данной директории расположены веса предобученных моделей. В изначальной версии данного репозитория в данной папке находятся следующие веса:
 
 - `gesture_classification.pth` - веса модели `ResNet34`, обученная на 50000 изображениях найденных жестов на картинках с вероятностью 0.99;
 - `mask_rcnn_hand_detection.h5` - веса модели `HandRCNN`. Взяты из [данного репозитория](https://github.com/theerapatkitti/hand_mask_rcnn/releases/tag/1.0).
 
-### [./data/]()
+### [./data/](https://github.com/aptmess/detectime/tree/main/data)
 
 Данная директория содержит необходимые данные для обучения.
 
 - `*.jpg` pictures and `test.csv` file - необходимы для кастомизации структуры работы, как в `docker`-контейнере на соревновании;
-- [./data/INPUT_DATA/]() - содержит исходные данные соревнования, а именно разметку `train.csv`
+- [./data/INPUT_DATA/](https://github.com/aptmess/detectime/tree/main/data/INPUT_DATA) - содержит исходные данные соревнования, а именно разметку `train.csv`
  и пример сабмита;
 - `./data/INPUT_DATA/JSON` - содержит `*.json` файлы:
     - с найденными для каждого изображения лицами `train_with_bboxes.json`;
@@ -105,21 +106,21 @@ sh download_data.sh
 - `.data/INPUT_DATA/ZIP` - содержит загруженные данные в `zip`-архивах, опционально
 - `.data/experiments` - директория, содержащая веса обучающихся моделей, сохраняются через функцию `detectime.utils.save_checkpoint`
 
-### [./notebooks/]()
+### [./notebooks/](https://github.com/aptmess/detectime/tree/main/notebooks)
 
 Как и было сказано, сожержит подробное описание по воспроизведению результатов и их возможному улучшению.
 
 
 ### Additional
 
-- [./answers.csv]() - сюда записываются ответы в соревновании;
-- [./config.yml]() - основной конфиг с возможностью настройки. Для запуска удобно сделать параметр `config.utils.show_gesture_prediction_result = False`;
-- [./definitions.py]() - содержит абсолютный путь `root` директории;
-- [./download.txt]() - ссылки на скачивание данных через `wget -u download.txt`;
-- [./download_data.sh]() - `bash` скрипт для удобного скачивания всех данных;
-- [./log_config.yml]() - конфиг для логирования;
-- [./requirements.txt]() - список зависимостей;
-- [./script.py]() - основной модуль, запускающий всю систему из `root` директории.
+- [./answers.csv](https://github.com/aptmess/detectime/blob/main/answers.csv) - сюда записываются ответы в соревновании;
+- [./config.yml](https://github.com/aptmess/detectime/blob/main/config.yml) - основной конфиг с возможностью настройки. Для запуска удобно сделать параметр `config.utils.show_gesture_prediction_result = False`;
+- [./definitions.py](https://github.com/aptmess/detectime/blob/main/definitions.py) - содержит абсолютный путь `root` директории;
+- [./download.txt](https://github.com/aptmess/detectime/blob/main/download.txt) - ссылки на скачивание данных через `wget -u download.txt`;
+- [./download_data.sh](https://github.com/aptmess/detectime/blob/main/download_data.sh) - `bash` скрипт для удобного скачивания всех данных;
+- [./log_config.yml](https://github.com/aptmess/detectime/blob/main/log_config.yml) - конфиг для логирования;
+- [./requirements.txt](https://github.com/aptmess/detectime/blob/main/requirements.txt) - список зависимостей;
+- [./script.py](https://github.com/aptmess/detectime/blob/main/script.py) - основной модуль, запускающий всю систему из `root` директории.
 
 ## Links
 
@@ -150,6 +151,3 @@ Author
 [mail]: resources/mail.svg
 [github]: resources/github.svg
 [theme]: resources/airplay.svg
-
-
-
