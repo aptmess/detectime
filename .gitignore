@@ -21,6 +21,7 @@ sdist/
 var/
 wheels/
 TRAIN_DATA/
+INPUT_DATA/
 train.csv
 *.json
 *.pth
