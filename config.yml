@@ -1,5 +1,5 @@
 exp_name: 'detectime'
-outdir: './experiments/'
+outdir: './EXPERIMENTS/'
 
 path:
     input_path: 'data/test.csv'
