@@ -26,7 +26,7 @@
 Все вычисления производились в среде `google.colab`.
 ## Quick Start
 
-- Создайте папку `./model/` в корне репозитория и скачайте веса предобученных моделей в данную папку. Веса скачиваются по [ссылке](https://drive.google.com/drive/folders/1lGBkGxeu8KL7B09cO9uCF37zVmySvCtm?usp=sharing) - общий вес менее 500 MB.
+- Создайте папку `./model/` в корне репозитория и скачайте веса предобученных моделей в данную папку. Веса скачиваются по [ссылке](https://drive.google.com/drive/folders/1ZlkedG4JWcSNep_iygLagxsRONT7bUg6?usp=sharing) - общий вес менее 500 MB.
 
 - Установите необходимые зависимости
 
