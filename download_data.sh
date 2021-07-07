@@ -15,6 +15,7 @@ echo 'done'
 
 echo 'start moving pictures into folder TRAIN_DATA/'
 
+mkdir TRAIN_DATA/
 find . -type d -name 'train_data*' -exec sh -c 'mv {}/* TRAIN_DATA/' \;
 find . -type d -name 'train_data*' -exec sh -c 'rm -r {}' \;
 
@@ -26,3 +27,11 @@ mkdir ZIP/
 find . -name 'train_data*.zip' -exec mv {} ZIP/ \;
 
 echo 'done'
+
+echo 'create JSON/ folder'
+
+mkdir JSON/
+
+echo 'done'
+
+echo 'exit'
